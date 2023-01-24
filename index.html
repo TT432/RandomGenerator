@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>干员能力随机器</title>
+</head>
+<style type="text/css">
+    h2 {
+        text-align: center;
+        color: red;
+    }
+
+    p {
+        text-align: center;
+        color: black;
+    }
+</style>
+
+<body onload="rollimg()">
+    <script type="text/javascript">
+        function rollimg() {
+            imgIndex = Math.floor((Math.random() * 3));
+            document.getElementById("you_are").innerHTML =
+                "<img src=\"./you_are " + imgIndex + ".png\" " +
+                "width=\"210\" height=\"120\"/>";
+
+            imgIndex = Math.floor((Math.random() * 15));
+            document.getElementById("attack_range").innerHTML =
+                "<img src=\"./图像 " + (imgIndex < 10 ? "0" + imgIndex : imgIndex) + ".png\" " +
+                "width=\"210\" height=\"120\"/>";
+
+            imgIndex = Math.floor((Math.random() * 15));
+            document.getElementById("capability").innerHTML =
+                "<img src=\"./capability " + (imgIndex < 10 ? "0" + imgIndex : imgIndex) + ".png\" " +
+                "width=\"210\" height=\"120\"/>";
+
+            imgIndex = Math.floor((Math.random() * 14));
+            document.getElementById("but").innerHTML =
+                "<img src=\"./but " + (imgIndex < 10 ? "0" + imgIndex : imgIndex) + ".png\" " +
+                "width=\"210\" height=\"120\"/>";
+        };
+    </script>
+
+    <p id="you_are"></p>
+    <p id="attack_range"></p>
+    <p id="capability"></p>
+    <p id="but"></p>
+    <p><button onclick="rollimg()">生成</button></p>
+</body>
+
+</html>
